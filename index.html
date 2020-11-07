@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Зарузить файл</title>
+</head>
+<body>
+    <div class="container min-vh-100">
+        <div class="row min-vh-100 justify-content-center align-items-center">
+          <form class="col-12" enctype="multipart/form-data"> 
+            <img src="images/logo.svg" class="img-fluid mb-2" alt="">
+            <div class="form-group form-inline">
+                <input type="file" class="formFile" id="file" multiple="multiple" required>
+                <small id="passwordHelpBlock" class="form-text text-muted ">
+                    Пожалуйста, добавьте одно или несколько изображений для обработки нашим специалистом
+                </small>
+            </div>
+            <select class="custom-select" name="theme" required>
+                <option value="" disabled hidden selected>Выберите тему</option>
+                <option value="Природа">Природа</option>
+                <option value="Космос">Космос</option>
+                <option value="Город">Город</option>
+            </select>
+            <div class="form-group mt-2 mb-0">
+                <textarea class="form-control" id="task" rows="3" placeholder="Опишите задачу" required></textarea>
+            </div>
+            <small id="passwordHelpBlock" class="form-text text-muted ">
+                * Необязательно
+            </small>
+            <div class="form-group form-inline">
+                    <input type="text" class="form-control flex-grow-1 mr-lg-2" id="name" placeholder="Ваше имя">
+                    <input type="email" class="form-control flex-grow-1" id="mail" placeholder="example@mail.ru">
+            </div>
+            
+            <button type="submit" class="btn btn-primary mb-2">Отправить</button>
+            <div class="alert alert-success" role="alert">
+                <strong>Отлично!</strong> Ваша изображение отправлено.
+            </div>
+            <div class="alert alert-danger" role="alert">
+                <strong>Ошибка!</strong> Изображение не отправлено.
+            </div>
+
+          </form>   
+        </div>
+      </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
+</body>
+</html>
