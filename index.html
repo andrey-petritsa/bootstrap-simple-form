@@ -11,13 +11,14 @@
 <body>
     <div class="container min-vh-100">
         <div class="row min-vh-100 justify-content-center align-items-center">
-          <form class="col-12" enctype="multipart/form-data"> 
+          <form class="col-12" id="form" enctype="multipart/form-data" method="POST" action="mail/index.php"> 
             <img src="images/logo.svg" class="img-fluid mb-2" alt="">
             <div class="form-group form-inline">
-                <input type="file" class="formFile" id="file" multiple="multiple" required>
+                <input type="file" class="formFile" id="file" name="file[]" multiple="multiple" required>
                 <small id="passwordHelpBlock" class="form-text text-muted ">
                     Пожалуйста, добавьте одно или несколько изображений для обработки нашим специалистом
                 </small>
+                <input type="hidden" name="MAX_FILE_SIZE" value="30000">
             </div>
             <select class="custom-select" name="theme" required>
                 <option value="" disabled hidden selected>Выберите тему</option>
@@ -26,22 +27,22 @@
                 <option value="Город">Город</option>
             </select>
             <div class="form-group mt-2 mb-0">
-                <textarea class="form-control" id="task" rows="3" placeholder="Опишите задачу" required></textarea>
+                <textarea class="form-control" id="task" name="task" rows="3" placeholder="Опишите задачу" required></textarea>
             </div>
             <small id="passwordHelpBlock" class="form-text text-muted ">
                 * Необязательно
             </small>
             <div class="form-group form-inline">
-                    <input type="text" class="form-control flex-grow-1 mr-lg-2" id="name" placeholder="Ваше имя">
-                    <input type="email" class="form-control flex-grow-1" id="mail" placeholder="example@mail.ru">
+                    <input type="text" class="form-control flex-grow-1 mr-lg-2" id="name" name="name" placeholder="Ваше имя">
+                    <input type="email" class="form-control flex-grow-1" id="mail" name="mail" placeholder="example@mail.ru">
             </div>
             
             <button type="submit" class="btn btn-primary mb-2">Отправить</button>
-            <div class="alert alert-success" role="alert">
+            <div class="alert alert-success success d-none" role="alert">
                 <strong>Отлично!</strong> Ваша изображение отправлено.
             </div>
-            <div class="alert alert-danger" role="alert">
-                <strong>Ошибка!</strong> Изображение не отправлено.
+            <div class="alert alert-danger error d-none" role="alert">
+                <strong>Ошибка!</strong> <span class="error-message"></span>.
             </div>
 
           </form>   
